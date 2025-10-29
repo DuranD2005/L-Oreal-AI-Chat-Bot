@@ -11,6 +11,7 @@ body {
   color: #333;
   display: flex;
   justify-content: center;
+  background: linear-gradient(135deg, #fff 0%, #000 100%);
 }
 
 .page-wrapper {
@@ -24,6 +25,9 @@ body {
   padding-top: 50px;
 }
 
+.site-logo {
+  margin-bottom: 25px;
+}
 .site-title {
   font-size: 22px;
   font-weight: 500;
@@ -48,16 +52,60 @@ body {
 
 /* messages */
 .msg {
+  /* bubble base styles */
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 16px;
+  max-width: 75%;
+  word-wrap: break-word;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* container rows to align left or right */
+.msg-row {
+  display: flex;
   margin-bottom: 14px;
-  line-height: 1.5;
+  gap: 8px;
+  padding: 0 2px;
 }
 
+.msg-row.user {
+  justify-content: flex-end; /* user on the right */
+}
+
+.msg-row.ai {
+  justify-content: flex-start; /* assistant on the left */
+}
+
+/* user bubble (right) */
 .msg.user {
-  color: #000;
+  background: #000000;
+  color: #ffffff;
+  text-align: right;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
 }
 
+/* assistant bubble (left) */
 .msg.ai {
-  color: #666666;
+  background: #ffffff;
+  color: #000000;
+  text-align: left;
+  border: 1px solid #e6e6e6;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+/* error bubble styling (optional subtle difference) */
+.msg.ai.error {
+  background: #fff3f3;
+  border-color: #f5c2c2;
 }
 
 /* input row */
@@ -125,7 +173,7 @@ body {
   margin: 60px 0 40px;
   text-align: center;
   font-size: 14px;
-  color: #666;
+  color: #000000;
 }
 
 .site-footer nav {
@@ -134,7 +182,7 @@ body {
 
 .site-footer a {
   margin: 0 8px;
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 
